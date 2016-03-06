@@ -12,10 +12,10 @@
      * @ngtype   directive
      * @restrict E
      */
-    wwMessageItem.$inject = [];
+    wwMessageItem.$inject = ["$http"];
 
     /* @ngInject */
-    function wwMessageItem () {
+    function wwMessageItem ($http) {
 
         var directive = {
             bindToController: true,
@@ -33,6 +33,18 @@
 
         function link(scope, element, attrs) {
             scope.vm.el = element;
+            console.log("GIDEON", element);
+
+            //window.setTimeout(function(){scope.vm.showAd = true}, 1000);
+
+            $http.get('http://api.watchwith.com/v3/ping').
+              success(function(data, status, headers, config) {
+                //$scope.posts = data;
+                console.log(data);
+                scope.vm.showAd=true;
+              })
+            //document.getElementById("demo").innerHTML = xhttp.responseText;
+
         }
 
 
@@ -44,6 +56,7 @@
         var vm = this;
         vm.togglePlayback = togglePlayback;
         vm.seek = seek;
+        vm.showAd = false;
 
         function seek(milliseconds) {
             wwPlayer.seekTo(milliseconds);
