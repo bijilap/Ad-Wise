@@ -14,18 +14,27 @@
     </div>
 </div>
 
-<div ng-if="vm.showFullAd"  ng-click="vm.togglePlayback()">
-  <div class="ww-message-container" name="message-container">
+<div ng-if="vm.showFullAd" class="ww-full-message-container"  ng-click="vm.togglePlayback()">
+  <div class="ww-message-container" name="message-container"">
       <div class="ww-image-container">
           <img class="ww-message-image" src="{{vm.event.card.object.image}}" alt="Item Image">
       </div>
       <div class="ww-text-container" name="text-container">
-          <h2 class="ww-title" name="title">{{vm.event.card.object.title}}</h2>
-          <div class="ww-message">{{vm.event.card.object.message}}</div>
+          <a href = "{{vm.event.card.object.url}}" target ="_blank"><h3 class="ww-title" name="title">{{vm.event.card.object.title}}</h3></a>
+          <h4 class="ww-message">{{vm.event.card.object.message}}</h4>
       </div>
-
-      <div class="message-btn" ng-click="vm.togglePlayback()">PAUSE/PLAY</div>
-      <a href="{{vm.event.card.object.link.url}}" target="_blank"><div class="message-btn">LINK</div></a>
-
+  </div>
+  <div class="ww-message-container" name="message-container">
+      <div class="ww-image-container">
+          <img class="ww-message-image" src="{{vm.event.card.object.imageB}}" alt="Item Image">
+      </div>
+      <div class="ww-text-container" name="text-container">
+          <a href = "{{vm.event.card.object.urlB}}" target ="_blank" ><h3 class="ww-title" name="title">{{vm.event.card.object.titleB}}</h3></a>
+          <h4 class="ww-message">{{vm.event.card.object.messageB}}</h4>
+      </div>
   </div>
 </div>
+<!--
+<div ng-if="vm.showFullAd"  ng-click="vm.togglePlayback()">
+</div>
+-->
