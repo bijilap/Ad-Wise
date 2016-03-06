@@ -1,8 +1,14 @@
 .ww-message-event {
 	position: absolute;
-	background-color: white;
-	bottom: 3em;
+	background-color: rgba(255,255,255,0.1);
+	bottom: 1.2em;
 	border-radius: .5em;
+	width: 70%;
+	padding: 0.3em 3em;
+	left:15%;
+	&:hover {
+    	background-color:rgb(128,128,128);
+   }
 	.ww-message-container{
 		position: relative;
 		display: flex;

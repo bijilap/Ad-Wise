@@ -1,10 +1,10 @@
-<div class="ww-message-event" ng-if="vm.showAd">
-    <div class="ww-message-container">
+<div class="ww-message-event" ng-if="vm.showAd" name="div-event">
+    <div class="ww-message-container" name="message-container">
         <div class="ww-image-container">
-            <img class="ww-message-image" src="{{vm.event.card.object.image.url}}">
+            <img class="ww-message-image" src="{{vm.event.card.object.image.url}}" alt="Item Image">
         </div>
-        <div class="ww-text-container">
-            <h1 class="ww-title">{{vm.event.card.object.title}}</h1>
+        <div class="ww-text-container" name="text-container">
+            <h1 class="ww-title" name="title">{{vm.event.card.object.title}}</h1>
             <div class="ww-message">{{vm.event.card.object.message}}</div>
         </div>
 

@@ -34,8 +34,9 @@
         function link(scope, element, attrs) {
             scope.vm.el = element;
             console.log("GIDEON", element);
+            console.log("GIDEONB", scope.vm.event.card.object.title);
 
-            //window.setTimeout(function(){scope.vm.showAd = true}, 1000);
+            var query = scope.vm.event.card.object.title;
 
             $http.get('http://api.watchwith.com/v3/ping').
               success(function(data, status, headers, config) {
