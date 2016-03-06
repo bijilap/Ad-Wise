@@ -56,6 +56,19 @@
                 scope.vm.event.card.object.message = record.seller;
                 console.log(record.img);
                 scope.vm.event.card.object.image = record.img;
+                scope.vm.event.card.object.url = record.url;
+
+                if(data.length>1){
+                  var record = data[1];
+                  console.log(record);
+                  scope.vm.event.card.object.titleB=record.text;
+                  console.log(scope.vm.event.card.object.titleB);
+                  scope.vm.event.card.object.messageB = record.seller;
+                  console.log(record.img);
+                  scope.vm.event.card.object.imageB = record.img;
+                  scope.vm.event.card.object.urlB = record.url;
+                }
+
                 scope.vm.showAd=true;
               }
               catch(e){
@@ -76,16 +89,20 @@
         vm.togglePlayback = togglePlayback;
         vm.seek = seek;
         vm.showAd = false;
+        vm.showFullAd = false;
 
         function seek(milliseconds) {
+            console.log("toggle-playback", "seeking");
             wwPlayer.seekTo(milliseconds);
         }
 
         function togglePlayback() {
 
-            console.log("toggle playback, ", vm.event);
+            console.log("toggle-playback", vm.event);
 
             wwPlayer.togglePlayback();
+            vm.showAd = !vm.showAd;
+            vm.showFullAd = !vm.showFullAd;
         }
 
     }

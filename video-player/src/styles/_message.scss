@@ -45,3 +45,69 @@
 
 	}
 }
+
+
+
+.ww-full-message-container {
+	position: absolute;
+	background-color: rgba(128,128,128,0.7);
+	color: rgba(0,128,0,0.7);
+	border-radius: .5em;
+	width: 70%;
+	height: 90%;
+	padding: 0.3em 3em;
+	left:15%;
+	&:hover {
+			background-color:rgba(128,128,128,0.9);
+			&.ww-message-container{
+				opacity: 1;
+			}
+	}
+	.ww-message-container{
+		position: relative;
+		opacity: 0.7;
+		padding: 5% 7%;
+		display: flex;
+			flex-wrap: nowrap;
+			flex-direction: row;
+		border-style:solid double solid double;
+		border-color: rgb(40,40,40);
+
+		.ww-image-container{
+			float: left;
+			//opacity: 0.6;
+			.ww-message-image {
+				max-width: 8em;
+				max-height: 10em;
+			}
+		}
+		.ww-text-container {
+			float: right;
+			text-decoration: none;
+			color: black;
+			left: 15%;
+			max-width: 30em;
+			.ww-title {
+				margin: .1em;
+			}
+			.ww-message {
+				margin: .1em;
+			}
+		}
+
+	}
+}
+
+
+h3 {
+    display: block;
+		padding: 5% 5%;
+    font-weight: bold;
+		white-space: nowrap;
+}
+
+h4 {
+		display: block;
+		padding: 5% 5%;
+		white-space: nowrap;
+}
