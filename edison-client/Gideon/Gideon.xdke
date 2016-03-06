@@ -5,5 +5,56 @@
     "currentBuildConfiguration": "Android",
     "projectFiles": {},
     "projectDirectories": {}
+  },
+  "iot-tab": {
+    "fileStatus": {
+      "Gideon.xdk": {
+        "previousModTime": 1457223891633,
+        "modified": 1457223891633,
+        "seen": true,
+        "name": "Gideon.xdk"
+      },
+      "Gideon.xdke": {
+        "previousModTime": 1457247566223,
+        "modified": 1457247566223,
+        "seen": true,
+        "name": "Gideon.xdke"
+      },
+      "icon.png": {
+        "previousModTime": 1457223891409,
+        "modified": 1457223891409,
+        "seen": true,
+        "name": "icon.png"
+      },
+      "main.js": {
+        "previousModTime": 1457247613327,
+        "modified": 1457247613327,
+        "seen": true,
+        "name": "main.js"
+      },
+      "package.json": {
+        "previousModTime": 1457223891409,
+        "modified": 1457223891409,
+        "seen": true,
+        "name": "package.json"
+      },
+      "README.md": {
+        "previousModTime": 1457223891409,
+        "modified": 1457223891409,
+        "seen": true,
+        "name": "README.md"
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1457223891609,
+        "modified": 1457223891609,
+        "seen": true,
+        "name": "xdk/project-info.json"
+      }
+    },
+    "boardFileStatus": {
+      "main.js": {
+        "previousModTime": 1457247617126
+      }
+    }
   }
 }
