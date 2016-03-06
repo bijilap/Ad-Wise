@@ -14,6 +14,8 @@
      */
     wwMessageItem.$inject = ["$http"];
 
+    var query_url_base = "http://localhost:3000/query?q=";
+
     /* @ngInject */
     function wwMessageItem ($http) {
 
@@ -34,15 +36,31 @@
         function link(scope, element, attrs) {
             scope.vm.el = element;
             console.log("GIDEON", element);
-            console.log("GIDEONB", scope.vm.event.card.object.title);
 
-            var query = scope.vm.event.card.object.title;
+            var url = query_url_base + scope.vm.event.card.object.message + '&callback=JSON_CALLBACK';
+            console.log("GIDEONB", url);
 
-            $http.get('http://api.watchwith.com/v3/ping').
+            $http.get(url).
               success(function(data, status, headers, config) {
                 //$scope.posts = data;
                 console.log(data);
+                if(data.length==0){
+                  console.log("end of func");
+                  return;
+                }
+                try{
+                var record = data[0];
+                console.log(record);
+                scope.vm.event.card.object.title=record.text;
+                console.log(scope.vm.event.card.object.title);
+                scope.vm.event.card.object.message = record.seller;
+                console.log(record.img);
+                scope.vm.event.card.object.image = record.img;
                 scope.vm.showAd=true;
+              }
+              catch(e){
+                console.log(e);
+              }
               })
             //document.getElementById("demo").innerHTML = xhttp.responseText;
 
