@@ -16,6 +16,16 @@ for(i=0; i< weather_obj.daily.data.length; i++){
 }
 avg_temp = avg_temp / weather_obj.daily.data.length;
 
+
+router.get('/rain_check', function(req, res){
+    weather_daily = weather_obj.daily.data;
+    if(weather_daily[1].precipType == "rain"){
+        res.send({"rain": true});
+    } else {
+        res.send({"rain": false});
+    }
+});
+
 console.log('avg_temp: ' + avg_temp);
 router.get('/', function(req, res){
     qp = req.query.q;
