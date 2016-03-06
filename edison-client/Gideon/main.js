@@ -7,7 +7,8 @@
 var mraa = require('mraa'); //require mraa
 var async = require('async');
 var http = require("http");
-var exec = require('child_process').exec;
+//var exec = require('child_process').execSync;
+var execSync = require("exec-sync");
 console.log(' Hello! This is Gideon Starting up... My MRAA Version: ' + mraa.getVersion()); //write the mraa version to the console
 
 //Libraries needed by the Sensors
@@ -123,9 +124,8 @@ function main(){
                     res.on('end', function() {
                     console.log(body);
                     var cmd = '/usr/bin/espeak -v en-us "It might Rain Today, Please Consider Carrying an Umberalla"'
-                     exec(cmd, function(error, stdout, stderr) {
-                            // command output is in stdout
-                     });
+                    execSync(cmd);
+                        
                     });
                     }).on('error', function(e) {
                         console.log("Got error: " + e.message);
