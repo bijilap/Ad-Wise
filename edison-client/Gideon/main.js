@@ -78,8 +78,8 @@ function main(){
             function(error, result) {
                console.log(result);
                var options = {
-                    hostname: '172.16.0.199',
-                    port: 3000,
+                    hostname: 'gideon-smart-server.mybluemix.net',
+                    port: 80,
                     path: '/upload',
                     method: 'POST',
                     headers: {
