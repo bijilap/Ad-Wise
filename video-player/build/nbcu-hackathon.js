@@ -3,10 +3,25 @@
 
     var app = angular.module('watchwith');
     app.requires.push('watchwith.promo');
+    app.requires.push('watchwith.message');
 
     // Add all modules that need to be included in the framework code here.
     // example: app.requires.push('watchwith.YOUR_DIRECTIVE');
 
+})();
+
+(function() {
+    'use strict';
+
+    /**
+     * @name     watchwith.message
+     * @desc     Module containing functionality for representing a promo type
+     * @ngtype   module
+     */
+    angular.module('watchwith.message', [
+        'watchwith.core',
+        'watchwith.analytics'
+    ]);
 })();
 
 (function() {
@@ -21,6 +36,67 @@
         'watchwith.core',
         'watchwith.analytics'
     ]);
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('watchwith.message')
+        .directive('wwMessageItem', wwMessageItem);
+
+
+    /**
+     * @name     wwMessageItem
+     * @desc     Message Directive
+     * @ngtype   directive
+     * @restrict E
+     */
+    wwMessageItem.$inject = [];
+
+    /* @ngInject */
+    function wwMessageItem () {
+
+        var directive = {
+            bindToController: true,
+            controller: wwMessageController,
+            controllerAs: 'vm',
+            restrict: 'E',
+            scope: {
+                event: "="
+            },
+            templateUrl: 'message/message-item-template.html',
+            link: link
+        };
+
+        return directive;
+
+        function link(scope, element, attrs) {
+            scope.vm.el = element;
+        }
+
+
+    }
+
+    wwMessageController.$inject = ['wwPlayer'];
+    /* @ngInject */
+    function wwMessageController (wwPlayer) {
+        var vm = this;
+        vm.togglePlayback = togglePlayback;
+        vm.seek = seek;
+
+        function seek(milliseconds) {
+            wwPlayer.seekTo(milliseconds);
+        }
+
+        function togglePlayback() {
+
+            console.log("toggle playback, ", vm.event);
+
+            wwPlayer.togglePlayback();
+        }
+
+    }
 })();
 
 (function() {
@@ -233,7 +309,8 @@
 	}
 })();
 angular.module("watchwith.templates").run(["$templateCache", function($templateCache) {$templateCache.put("item/default-template.html","<div\n    class=\"ww-item\"\n    ng-click=\"vm.itemClicked()\"\n    ng-mouseover=\"vm.focusIn()\"\n    ng-mouseleave=\"vm.focusOut()\">\n    ITEM: {{vm.event.card.type}} - {{vm.event.card.object.title}}</div>");
-$templateCache.put("item/message-template.html","<div class=\"ww-message-event\">\n	<a class=\"ww-message-container\" href=\"{{vm.event.card.object.link.url}}\" target=\"_blank\">\n		<div class=\"ww-image-container\">\n			<img class=\"ww-message-image\" src=\"{{vm.event.card.object.image.url}}\">\n		</div>\n		<div class=\"ww-text-container\">\n			<h1 class=\"ww-title\">{{vm.event.card.object.title}}</h1>\n			<div class=\"ww-message\">{{vm.event.card.object.message}}</div>\n		</div>\n\n	</a>\n</div>");
+$templateCache.put("item/message-template.html","<ww-message-item event =\"vm.event\"></ww-message-item>\n");
 $templateCache.put("item/promo-template.html","<ww-promo-item event =\"vm.event\"></ww-promo-item>");
+$templateCache.put("message/message-item-template.html","<div class=\"ww-message-event\">\n    <div class=\"ww-message-container\">\n        <div class=\"ww-image-container\">\n            <img class=\"ww-message-image\" src=\"{{vm.event.card.object.image.url}}\">\n        </div>\n        <div class=\"ww-text-container\">\n            <h1 class=\"ww-title\">{{vm.event.card.object.title}}</h1>\n            <div class=\"ww-message\">{{vm.event.card.object.message}}</div>\n        </div>\n\n        <div class=\"message-btn\" ng-click=\"vm.togglePlayback()\">PAUSE/PLAY</div>\n        <a href=\"{{vm.event.card.object.link.url}}\" target=\"_blank\"><div class=\"message-btn\">LINK</div></a>\n\n    </div>\n</div>\n");
 $templateCache.put("promo/promo-item-template.html","<div class=\"ww-promo-event\">\n    <div class=\"ww-promo-container\">\n        <div class=\"ww-image-container\">\n            <img class=\"ww-promo-image\" src=\"{{vm.event.card.object.image.url}}\">\n        </div>\n        <div class=\"ww-text-container\">\n            <h1 class=\"ww-title\">{{vm.event.card.object.title}}</h1>\n            <div class=\"ww-message\">{{vm.event.card.object.message}}</div>\n        </div>\n\n        <div class=\"promo-btn\" ng-click=\"vm.togglePlayback()\">PAUSE/PLAY</div>\n        <a href=\"{{vm.event.card.object.link.url}}\" target=\"_blank\"><div class=\"promo-btn\">LINK</div></a>\n\n    </div>\n</div>");
 $templateCache.put("stage/default-template.html","<div class=\"ww-stage\" style=\"pointer-events: none;\">\n\n    <ww-feed\n        events=\"vm.filteredEvents\"\n        style=\"pointer-events: auto;\">\n    </ww-feed>\n\n</div>");}]);
