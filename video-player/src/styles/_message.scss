@@ -1,25 +1,40 @@
 .ww-message-event {
 	position: absolute;
-	background-color: white;
-	bottom: 3em;
+	background-color: rgba(255,255,255,0.1);
+	color: rgba(0,128,0,0.1);
+	bottom: 1.2em;
 	border-radius: .5em;
+	width: 70%;
+	padding: 0.3em 3em;
+	left:15%;
+	&:hover {
+    	background-color:rgba(128,128,128,0.7);
+			&.ww-message-container{
+				opacity: 1;
+			}
+   }
 	.ww-message-container{
 		position: relative;
+		opacity: 0.4;
+		padding: 0.3em 3em;
 		display: flex;
 	    flex-wrap: nowrap;
 	    flex-direction: row;
-	    justify-content: center;
 
 		.ww-image-container{
 			float: left;
+			//opacity: 0.6;
 			.ww-message-image {
-				max-width: 15em;
+				max-width: 5em;
+				max-height: 8em;
 			}
 		}
 		.ww-text-container {
 			float: right;
 			text-decoration: none;
 			color: black;
+			left: 15%;
+			//opacity: 0.6;
 			.ww-title {
 				margin: .1em;
 			}
