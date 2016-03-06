@@ -15,8 +15,8 @@
         "name": "Gideon.xdk"
       },
       "Gideon.xdke": {
-        "previousModTime": 1457248512731,
-        "modified": 1457248512731,
+        "previousModTime": 1457266864974,
+        "modified": 1457266864974,
         "seen": true,
         "name": "Gideon.xdke"
       },
@@ -27,14 +27,14 @@
         "name": "icon.png"
       },
       "main.js": {
-        "previousModTime": 1457260717594,
-        "modified": 1457260717594,
+        "previousModTime": 1457266861774,
+        "modified": 1457266861774,
         "seen": true,
         "name": "main.js"
       },
       "package.json": {
-        "previousModTime": 1457223891409,
-        "modified": 1457223891409,
+        "previousModTime": 1457266384638,
+        "modified": 1457266384638,
         "seen": true,
         "name": "package.json"
       },
@@ -51,10 +51,6 @@
         "name": "xdk/project-info.json"
       }
     },
-    "boardFileStatus": {
-      "main.js": {
-        "previousModTime": 1457260718639
-      }
-    }
+    "boardFileStatus": {}
   }
 }

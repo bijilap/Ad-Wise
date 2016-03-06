@@ -7,6 +7,7 @@
 var mraa = require('mraa'); //require mraa
 var async = require('async');
 var http = require("http");
+var exec = require('child_process').exec;
 console.log(' Hello! This is Gideon Starting up... My MRAA Version: ' + mraa.getVersion()); //write the mraa version to the console
 
 //Libraries needed by the Sensors
@@ -106,8 +107,32 @@ function main(){
         } else {
             temp_array.push(temp_value);
             light_array.push(light_value);
-            if (touch_value == 1)
+            if (touch_value == 1){
                 touch_global_val = "yes";
+                var options = {
+                    host: 'gideon-smart-server.mybluemix.net',
+                    port: 80,
+                    path: '/query/rain_check'
+                    };
+
+                    http.get(options, function(res) {
+                    var body = '';
+                    res.on('data', function(chunk) {
+                            body += chunk;
+                    });
+                    res.on('end', function() {
+                    console.log(body);
+                    var cmd = '/usr/bin/espeak -v en-us "It might Rain Today, Please Consider Carrying an Umberalla"'
+                     exec(cmd, function(error, stdout, stderr) {
+                            // command output is in stdout
+                     });
+                    });
+                    }).on('error', function(e) {
+                        console.log("Got error: " + e.message);
+                    });
+                  
+                
+            }
             //console.log(temp_array);
             //console.log(light_array);
         }
