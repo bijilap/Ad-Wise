@@ -1,0 +1,40 @@
+.ww-promo-event {
+  position: absolute;
+  background-color: white;
+  bottom: 3em;
+  border-radius: .5em;
+  .ww-promo-container{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+
+    .ww-image-container{
+      float: left;
+      .ww-promo-image {
+        max-width: 15em;
+      }
+    }
+    .ww-text-container {
+      float: right;
+      text-decoration: none;
+      color: black;
+      .ww-title {
+        margin: .1em;
+      }
+      .ww-message {
+        margin: .1em;
+      }
+    }
+  }
+  .promo-btn {
+    background-color: #FFCC00;
+    color: white;
+    padding: .35em;
+    margin-left: 1em;
+    border-radius: .3em;
+    height: 2em;
+    cursor: pointer;
+  }
+}

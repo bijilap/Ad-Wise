@@ -1,0 +1,38 @@
+[
+  {
+    "item": "hoddie-men",
+    "listings": [
+      {
+        "url": "http://www.amazon.com/Alternative-Rocky-Hoodie-Black-Large/dp/B005CWNYUO/ref=sr_1_2?ie=UTF8&qid=1457225069&sr=8-2&keywords=hoodie",
+        "img": "http://ecx.images-amazon.com/images/I/81h-bNYKKyL._UX522_.jpg",
+        "text": "Rocky Hoodie",
+        "seller": "Amazon",
+        "price": "$10-$36"
+      },
+      {
+        "url": "http://www.amazon.com/Champion-Pullover-Fleece-Hoodie-Black/dp/B005CSORZY/ref=sr_1_6?ie=UTF8&qid=1457225345&sr=8-6&keywords=hoodie",
+        "img": "http://ecx.images-amazon.com/images/I/91hF19cxMSL._UY500_.jpg",
+        "seller": "Amazon",
+        "price": "$10.65-$46"
+      }
+    ]
+  },
+  {
+    "item": "sweater-women",
+    "listings": [
+      {
+        "url": "http://www.amazon.com/Allegra-Contrast-Zig-Zag-Pattern-Knitted/dp/B00QC6X89Q/ref=sr_1_4?s=apparel&ie=UTF8&qid=1457225891&sr=1-4&nodeID=1040660&keywords=sweater+women",
+        "img": "http://ecx.images-amazon.com/images/I/81h-bNYKKyL._UX522_.jpg",
+        "text": "Rocky Hoodie",
+        "seller": "Amazon",
+        "price": "$10-$36"
+      },
+      {
+        "url": "http://www.amazon.com/Champion-Pullover-Fleece-Hoodie-Black/dp/B005CSORZY/ref=sr_1_6?ie=UTF8&qid=1457225345&sr=8-6&keywords=hoodie",
+        "img": "http://ecx.images-amazon.com/images/I/91hF19cxMSL._UY500_.jpg",
+        "seller": "Amazon",
+        "price": "$10.65-$46"
+      }
+    ]
+  }
+]

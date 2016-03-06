@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video chi-fire-4</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./watchwith.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Muli:400" media="all">
+</head>
+<body>
+
+<!-- Nav bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+             </button>
+            <a class="navbar-brand" href="./"><img src="./black-logo.svg" width="125px" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://nbcuhackathon.slack.com/archives/watchwith">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h3>Chicago Fire (ep 4)</h3>
+<div class="ww-video-wrapper"><video id="player" class="ww-video" src="https://d3soezdrjjkk7w.cloudfront.net/WatchWith_Development_Account/691/590/Segment4-NBCE-ScriptedEntertainment-ACT3.mp4" controls></video></div>
+<div ng-app="watchwith" ng-strict-di>
+    <watchwith
+        access-key="C92IXCHQLPJ"
+        player-element="#player"
+        player-type="html5"
+		airing-id="d0e37c79-680e-4e23-922f-a3ea8d92bae1"
+        settings="::{
+        	disableSockets: true
+        }">
+    </watchwith>
+</div>
+
+<script type="application/javascript" src="//d243sour89mi5g.cloudfront.net/watchwith-ng/0.5.3/watchwith-ng.js"></script>
+<script type="application/javascript" src="./modules.js"></script>
+<script type="application/javascript" src="./templates.js"></script>
+</body>
+</html>
