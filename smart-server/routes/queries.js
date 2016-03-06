@@ -18,9 +18,27 @@ avg_temp = avg_temp / weather_obj.daily.data.length;
 
 
 router.get('/rain_check', function(req, res){
-    weather_daily = weather_obj.daily.data;
-    if(weather_daily[1].precipType == "rain"){
+    /*weather_daily = weather_obj.daily.data;
+    if(weather_daily[0].precipType == "rain"){
         res.send({"rain": true});
+    } else {
+        res.send({"rain": false});
+    }*/
+    weather_hourly = weather_obj.hourly.data;
+    current_weather = weather_obj.hourly.data[0];
+    current_time = (new Date).getTime();
+    for(i = 0; i< weather_hourly.length; i++){
+        if(Math.abs(current_time - weather_hourly[i].time) < 3600){
+            current_weather = weather_hourly[i];
+            break;
+        }
+    }
+    if('precipType' in current_weather){
+        if(current_weather.precipType == "rain"){
+            res.send({"rain": true});
+        } else {
+            res.send({"rain": false});
+        }
     } else {
         res.send({"rain": false});
     }
