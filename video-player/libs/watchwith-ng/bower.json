@@ -1,0 +1,32 @@
+{
+    "dependencies": {
+        "angular": "~1.4.x",
+        "lodash": "~3.10.0",
+        "sockjs-client": "~1.0.3"
+    },
+    "devDependencies": {
+        "angular-mocks": "~1.4.x"
+    },
+    "ignore": [
+        ".bowerrc",
+        ".gitignore",
+        "build",
+        "build.gradle",
+        "build-config.json",
+        "gradle",
+        "gradlew",
+        "gradlew.bat",
+        "gulp",
+        "gulpfile.js",
+        "karma.conf.js",
+        "package.json",
+        "README.md",
+        "settings.gradle",
+        "src",
+        ".jscsrc",
+        ".jshintrc"
+    ],
+    "main": "dist/watchwith-ng.js",
+    "name": "watchwith-ng",
+    "version": "0.4.1"
+}

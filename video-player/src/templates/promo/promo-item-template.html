@@ -1,0 +1,15 @@
+<div class="ww-promo-event">
+    <div class="ww-promo-container">
+        <div class="ww-image-container">
+            <img class="ww-promo-image" src="{{vm.event.card.object.image.url}}">
+        </div>
+        <div class="ww-text-container">
+            <h1 class="ww-title">{{vm.event.card.object.title}}</h1>
+            <div class="ww-message">{{vm.event.card.object.message}}</div>
+        </div>
+
+        <div class="promo-btn" ng-click="vm.togglePlayback()">PAUSE/PLAY</div>
+        <a href="{{vm.event.card.object.link.url}}" target="_blank"><div class="promo-btn">LINK</div></a>
+
+    </div>
+</div>

@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#watchwith-app {
+
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+
+  .ww-stage {
+    position: absolute;
+    overflow: hidden;
+    // z-index: 999999;
+    z-index: 2147483647;
+    p {
+      font-size: 75%;
+    }
+    li {
+      list-style: none;
+    }
+  }
+}
