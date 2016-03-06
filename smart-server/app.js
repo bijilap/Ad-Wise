@@ -7,8 +7,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var upload = require('./routes/upload');
+var query = require('./routes/queries');
 
 var app = express();
+
+global.temp_arr = [];
+global.temp_index = 0;
+global.light_arr = [];
+global.light_index = 0;
+global.touch_or_not = false;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/upload', upload);
+app.use('/query', query);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
