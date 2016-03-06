@@ -1,0 +1,50 @@
+{
+  "author": "Watchwith, Inc.",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.2.0",
+    "ejs": "^2.3.4",
+    "gulp": "~3.9.1",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-ejs": "^1.2.1",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-serve": "^1.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "~1.1.5"
+  },
+  "homepage": "http://www.watchwith.com",
+  "license": "LicenseRef-LICENSE",
+  "name": "nbcu-hackathon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watchwith/nbcu-hackathon.git"
+  },
+  "scripts": {
+    "prestart": "npm install"
+  },
+  "version": "2.0.0",
+  "ww": {
+    "config": {
+      "default": {
+        "accessKey": "C92IXCHQLPJ",
+        "pageTemplate": "src/pages/video.ejs",
+        "pages": [
+          {
+            "name": "wow",
+            "title": "Mr. Robot [Season 1 Episode 1]",
+            "videoUrl": "https://d3soezdrjjkk7w.cloudfront.net/WatchWith_Development_Account/835/975/MrRobot_eps1.0_hellofriend.mov720p__476099.mp4",
+            "thumbnail": "http://images.hngn.com/data/images/full/134342/mr-robot.jpg",
+            "airingId": " 081d655b-377f-40bb-a51e-b849741ba2f3"
+          }
+        ],
+        "port": 3000
+      }
+    }
+  }
+}

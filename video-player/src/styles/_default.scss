@@ -1,0 +1,15 @@
+@import "mixins.scss";
+@import "stage.scss";
+@import "message.scss";
+@import "promo.scss";
+
+$tile-width: 25em;
+$tile-height: 21em;
+$tile-margin: .5em;
+$highlight-color: #FCO;
+$drawer-content-height: 7em;
+$drawer-top-bdr-height: .35em;
+$drawer-content-bg-color: #fbfbfb;
+$line-arrow-display: none;
+$fill-arrow-display: inline-block;
+$two-answer-default-grey: #777;
