@@ -76,16 +76,20 @@
         vm.togglePlayback = togglePlayback;
         vm.seek = seek;
         vm.showAd = false;
+        vm.showFullAd = false;
 
         function seek(milliseconds) {
+            console.log("toggle-playback", "seeking");
             wwPlayer.seekTo(milliseconds);
         }
 
         function togglePlayback() {
 
-            console.log("toggle playback, ", vm.event);
+            console.log("toggle-playback", vm.event);
 
             wwPlayer.togglePlayback();
+            vm.showAd = !vm.showAd;
+            vm.showFullAd = !vm.showFullAd;
         }
 
     }
