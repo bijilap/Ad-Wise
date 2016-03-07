@@ -14,7 +14,8 @@ case b. If the room temperature <= outside temperature -> higher tolerance to co
 
 ## Demo
 Video can be found here: https://youtu.be/gj8N2fm47xI
-Use Cases
+
+## Use Cases
 #### A. Ad finds user
 1. The user has less tolerance to cold and winter is fast approaching. The user is watching an episode of Mr. Robot, and  there is a scene where the two protagonists are wearing some form of winter wear. The user is shown an ad for the hoodie, which he can tap on to see more similar items and choose an item if he wants and buy it
 2. The user has just landed California, moving from NYC, who is used to the harsh winter in NYC. This user is more tolerant is cold and wont need a jacket soon. The user is not shown this ad
